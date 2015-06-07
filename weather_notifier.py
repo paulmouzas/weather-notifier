@@ -1,5 +1,4 @@
 # -*- coding: UTF-8 -*-
-import weather
 import requests
 import datetime
 import json
@@ -20,8 +19,8 @@ if r.status_code == 200:
     sunset = data['sys']['sunset']
 
     # convert unix timestamp to readable format
-    sunrise = datetime.datetime.fromtimestamp(sunrise).strftime('%Y-%m-%d %H:%M:%S')
-    sunset = datetime.datetime.fromtimestamp(sunset).strftime('%Y-%m-%d %H:%M:%S')
+    sunrise = datetime.datetime.fromtimestamp(sunrise).strftime('%H:%MAM')
+    sunset = datetime.datetime.fromtimestamp(sunset).strftime('%H:%MPM')
 
     current_temp = data['main']['temp']
     low_temp = data['main']['temp_min']
